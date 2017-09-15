@@ -1,0 +1,10 @@
+http://c.biancheng.net/cpp/html/272.html
+
+文件：#include <unistd.h>
+
+定义函数：int execlp(const char * file, const char * arg, ...);
+
+函数说明：execlp()会从PATH 环境变量所指的目录中查找符合参数file 的文件名, 找到后便执行该文件, 
+然后将第二个以后的参数当做该文件的argv[0], argv[1], ..., 最后一个参数必须用空指针(NULL)作结束.
+返回值：如果执行成功则函数不会返回, 执行失败则直接返回-1, 失败原因存于errno 中.
+
