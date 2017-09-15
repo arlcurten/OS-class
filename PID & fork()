@@ -1,3 +1,18 @@
+https://zh.wikipedia.org/wiki/Fork_(%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8)
+
+Fork (系統呼叫)
+
+在多工作業系統中，行程（執行的程式）需要一種方法來建立新行程，例如執行其他程式。Fork及其變種在類Unix系統中通常是這樣做的唯一方式。
+如果行程需要啟動另一個程式的執行檔，它需要先Fork來建立一個自身的副本。
+然後由該副本即「子行程」呼叫exec系統呼叫，用其他程式覆蓋自身：停止執行自己之前的程式並執行其他程式。
+
+##背景: 運用在多工的作業系統中，可以多個程序/service並行
+##目的之一: 用來在原本的程式中，呼叫另一個程式。
+##使用fork()後，複製出來的子程式可以call另一個程式，如果沒有error的話就不返回。而原先的parent依舊可以繼續做其他的事情。
+
+
+--
+
 https://stackoverflow.com/questions/5002036/what-will-be-the-pid-after-fork/5002126#5002126
 
 Upon successful completion, fork() returns a value of 0 to the child
