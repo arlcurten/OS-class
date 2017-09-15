@@ -1,0 +1,31 @@
+http://c.biancheng.net/cpp/html/272.html
+
+C语言execlp()函数：从PATH 环境变量中查找文件并执行
+
+定义函数：int execlp(const char * file, const char * arg, ...);
+函数说明：execlp()会从PATH 环境变量所指的目录中查找符合参数file 的文件名, 找到后便执行该文件, 
+然后将第二个以后的参数当做该文件的argv[0], argv[1], ..., 最后一个参数必须用空指针(NULL)作结束.
+返回值：如果执行成功则函数不会返回, 执行失败则直接返回-1, 失败原因存于errno 中.
+
+
+--
+
+http://c.biancheng.net/cpp/html/275.html
+
+C语言execvp()函数：执行文件函数
+
+定义函数：int execvp(const char *file, char * const argv []);
+函数说明：execvp()会从PATH 环境变量所指的目录中查找符合参数file 的文件名, 找到后便执行该文件, 然后将第二个参数argv 传给该欲执行的文件。
+返回值：如果执行成功则函数不会返回, 执行失败则直接返回-1, 失败原因存于errno 中.
+
+--
+
+https://stackoverflow.com/questions/5769734/what-are-the-different-versions-of-exec-used-for-in-c
+
+差異
+
+The differences are combinations of:
+L vs V: whether you want to pass the parameters to the exec'ed program as
+
+L: individual parameters in the call (variable argument list): execl(), execle(), execlp(), and execlpe()
+V: as an array of char* execv(), execve(), execvp(), and execvpe()
